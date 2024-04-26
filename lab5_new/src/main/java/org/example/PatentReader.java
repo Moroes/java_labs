@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Reader {
+public class PatentReader {
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
     public List<Patent> readCSV(String filePath) throws IOException, ParseException {
@@ -19,11 +19,13 @@ public class Reader {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
+                String[] data = line.split("\",\"");
                 Patent patent = new Patent();
                 patent.setTitle(data[0]);
                 patent.setNumber(data[1]);
-                patent.setDate(DATE_FORMAT.parse(data[2]));
+                // Remove quotes from date string before parsing
+                String dateStr = data[2].replaceAll("\"", "");
+                patent.setDate(DATE_FORMAT.parse(dateStr));
                 // Assuming inventors, companies, and mpk are comma-separated values in the file
                 patent.setInventors(List.of(data[3].split(";")));
                 patent.setCompanies(List.of(data[4].split(";")));
@@ -36,7 +38,7 @@ public class Reader {
     }
 
     public static void main(String[] args) {
-        Reader patentReader = new Reader();
+        PatentReader patentReader = new PatentReader();
         try {
             List<Patent> patents = patentReader.readCSV("src/main/resources/patents.csv");
             // Now you have the list of patents
