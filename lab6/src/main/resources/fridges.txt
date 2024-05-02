@@ -1,0 +1,11 @@
+ID	Наименование	Бренд	Цена за 1 шт., руб	Цвет	Оценка покупателей
+1	DEXP RF-MN430NHE/S	DEXP	39999	серебристый	4,6
+2	DEXP RF-CD170NMA/W	DEXP	12999	белый	4,8
+3	LG GA-B459CLWL	LG	35999	серебристый	4,8
+4	INDESIT DFN 18	INDESIT	21649	белый	4,5
+5	LG GA-B509MLS	LG	42999	серый	4,8
+6	Samsung RB30J3000WW/WT	Samsung	28999	белый	4,4
+7	LG GA-B509MESL	LG	36999	бежевый	4,8
+8	BEKO RCNK310KC0W	BEKO	22999	белый	4,6
+9	Bosch KGV39XW22R	Bosch	28999	белый	4,7
+10	Samsung RB30J3000SA/WT	Samsung	29999	серебристый	4,4
